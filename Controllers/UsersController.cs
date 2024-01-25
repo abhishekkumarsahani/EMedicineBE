@@ -37,5 +37,25 @@ namespace EMedicineBE.Controllers
             return response;
 
         }
+        [HttpPost]
+        [Route("viewUser")]
+        public Response viewUser(Users users)
+        {
+            DAL dAL = new DAL();
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("EMedCS").ToString());
+            Response response = new Response();
+            response = dAL.viewUser(users, connection);
+            return response;
+        }
+        [HttpPost]
+        [Route("updateProfile")]
+        public Response updateProfile(Users users)
+        {
+            DAL dAL=new DAL();
+            SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("EMedCS").ToString());
+            Response response=new Response();
+            response = dAL.updateProfile(users, connection);
+            return response;
+        }
     }
 }
