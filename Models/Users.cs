@@ -11,6 +11,7 @@
         public string Type { get; set; }
         public int Status { get; set; }
         public DateTime CreatedOn { get; set; }
-        public string OrderType { get; set; }
+        public string actionType { get; set; }
+        public string OrderDate { get; set; }
     }
 }
